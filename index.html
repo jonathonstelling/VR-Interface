@@ -1,0 +1,84 @@
+<!--Jonathon Stelling || http://jonnystelling.com-->
+<!--Version 1.35-->
+<!--02/08/2016-->
+
+<!------- Template for using Keyshot VR with many different settings/configurations loaded into one iFrame space ------->
+
+<!-- Examples: Exploded Views, Colours, Setups, etc.. -->
+
+<!------- This example doesn't change the source of the iFrame to prevent the VR images been loaded in every time a new configuration is loaded onto the page,
+this stops the VR images been loaded onto the page more than once. Instead, this example simply hides and shows the different iFrame configurations ------>
+
+<!-- with inline styling -->
+
+<html>
+    <head>
+<style>
+.button {
+/*------------------------------ Button Styling ------------------------------*/
+    background-color: #e7e7e7; /* Grey */
+    border: none;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+ 
+/*------------------------------ Button Colours ------------------------------*/
+.blue {background-color: #008CBA;} /* Blue */
+.green {background-color: #4CAF50;} /* Green */
+.grey {background-color: #e7e7e7; color: black;} /* Grey */
+</style>
+    </head>
+  <body>
+      
+
+<div id="allButtons" style="display:block;">
+<!------------------------------ VR BUTTONS ------------------------------->
+    <input type="button" class="button blue" value="Main VR" onclick="mainVR()" />
+    <input type="button" class="button grey" value="Next VR" onclick="nextVR()" />
+    </div>
+      
+<!------------------------- VR IFRAME CONTENT ------------------------------->
+      
+<!-------------- Main VR  ------------------->
+<div id="mainVRDiv" style="display:block; left:0px; width:100%; height:0px; position:relative; padding-bottom:56.25%;">
+<iframe id="nameofVR" src="https://51e762c0503a30a42aec885cade975c2bb0d736a-www.googledrive.com/host/0B1ou5sOvksZkblpxVFJQaWtHT3M/Radial%20Engine%203%20Cylinder_VR.28.html" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe>
+<a style="position:absolute; right:1%; bottom:1%;" href="www.jonnystelling.com">jonnystelling.com</a>
+</div>
+
+<!-------------- Next VR  ------------------->
+<div id="nextVRDiv" style="display:none; left:0px; width:100%; height:0px; position:relative; padding-bottom:56.25%;">
+<iframe id="nameofVR" src="images/Amber_LP.jpg" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" style="top: 0px; left: 0px; width: 100%; height: 100%; position: absolute;"></iframe>
+<img style="position:absolute; right:1%;" src="images/ECCO_Logo_Black.png" alt="Logo" width=10%>
+</div>
+
+
+<!--------- Showing and Hiding VR Content with Button Clicks  ------->     
+<script>
+      
+// Hide VR's ///////////////////////////////
+    function VRHide() {   
+        document.getElementById('mainVRDiv').style.display = "none";
+        document.getElementById('nextVRDiv').style.display = "none";
+    }
+    
+    
+// Showing VR //////////////////////////////
+    function mainVR() {
+                VRHide();
+        document.getElementById('mainVRDiv').style.display = "block";
+    }
+    function nextVR() {
+                VRHide();
+        document.getElementById('nextVRDiv').style.display = "block";
+    }
+    
+</script>
+      
+  </body>
+</html>
